@@ -12,7 +12,6 @@ ApiContext apiContext = new ApiContext(token);
 
 ## Pobieranie przewidywan
 ```java
-// informacje o sklepie
 String phrase = "o cie k u r//w@!";
 CensorPredictionInfo prediction = CensorPredictionInfo.getPrediction(apiContext, phrase);
 System.out.println(prediction);
