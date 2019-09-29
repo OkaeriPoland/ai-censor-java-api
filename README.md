@@ -10,7 +10,7 @@ String token = "TWOJ-TOKEN";
 ApiContext apiContext = new ApiContext(token);
 ```
 
-## Pobieranie przewidywan
+## Pobieranie przewidywań
 ```java
 String phrase = "o cie k u r//w@!";
 CensorPredictionInfo prediction = CensorPredictionInfo.getPrediction(apiContext, phrase);
