@@ -14,7 +14,7 @@ CensorApiContext apiContext = new CensorApiContext(token);
 ```java
 // zapytanie
 String phrase = "o cie k u r//w@!";
-CensorPredictionInfo prediction = CensorPredictionInfo.getPrediction(apiContext, phrase);
+CensorPredictionInfo prediction = CensorPredictionInfo.get(apiContext, phrase);
 System.out.println(prediction);
 // czy jest to wulgarne?
 boolean swear = prediction.isSwear();

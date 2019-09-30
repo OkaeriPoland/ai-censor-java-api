@@ -85,7 +85,7 @@ public class CensorPredictionInfo {
     }
 
     @JsonIgnore
-    public static CensorPredictionInfo getPrediction(CensorApiContext apiContext, String phrase) throws ApiException {
+    public static CensorPredictionInfo get(CensorApiContext apiContext, String phrase) throws ApiException {
         return ApiResource.post(apiContext, "/predict", Collections.singletonMap("phrase", phrase), CensorPredictionInfo.class);
     }
 }
