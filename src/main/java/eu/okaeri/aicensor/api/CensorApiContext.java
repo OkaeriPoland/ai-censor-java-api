@@ -20,7 +20,7 @@ package eu.okaeri.aicensor.api;
 
 import okhttp3.OkHttpClient;
 
-public class ApiContext {
+public class CensorApiContext {
 
     private static final String DEFAULT_MAIN_URL = "https://ai-censor.okaeri.eu";
 
@@ -29,7 +29,7 @@ public class ApiContext {
     private String mainUrl;
     private OkHttpClient client;
 
-    public ApiContext(String token) {
+    public CensorApiContext(String token) {
         this.token = token;
         this.client = new OkHttpClient();
         this.mainUrl = DEFAULT_MAIN_URL;

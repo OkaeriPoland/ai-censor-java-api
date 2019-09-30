@@ -7,7 +7,7 @@ Implementacja publicznego API OK! AI.Censor w Javie.
 String token = "TWOJ-TOKEN";
 
 // tworzymy context (w większości przypadków należy go gdzieś zapisać)
-ApiContext apiContext = new ApiContext(token);
+CensorApiContext apiContext = new CensorApiContext(token);
 ```
 
 ## Pobieranie przewidywań

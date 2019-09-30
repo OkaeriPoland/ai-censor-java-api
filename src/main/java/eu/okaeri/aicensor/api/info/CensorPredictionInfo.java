@@ -21,7 +21,7 @@ package eu.okaeri.aicensor.api.info;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import eu.okaeri.aicensor.api.ApiContext;
+import eu.okaeri.aicensor.api.CensorApiContext;
 import eu.okaeri.aicensor.api.ApiException;
 import eu.okaeri.aicensor.api.ApiResource;
 
@@ -65,7 +65,7 @@ public class CensorPredictionInfo {
     }
 
     @JsonIgnore
-    public static CensorPredictionInfo getPrediction(ApiContext apiContext, String phrase) throws ApiException {
+    public static CensorPredictionInfo getPrediction(CensorApiContext apiContext, String phrase) throws ApiException {
         return ApiResource.post(apiContext, "/predict", Collections.singletonMap("phrase", phrase), CensorPredictionInfo.class);
     }
 }
