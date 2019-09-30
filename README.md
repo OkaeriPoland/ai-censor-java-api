@@ -17,7 +17,7 @@ String phrase = "o cie k u r//w@!";
 CensorPredictionInfo prediction = CensorPredictionInfo.getPrediction(apiContext, phrase);
 System.out.println(prediction);
 // czy jest to wulgarne?
-boolean swear = prediction.getGeneral().isSwear();
+boolean swear = prediction.isSwear();
 ```
 
 - [CensorPredictionInfo](https://github.com/OkaeriPoland/ai-censor-java-api/blob/master/src/main/java/eu/okaeri/aicensor/api/info/CensorPredictionInfo.java)
