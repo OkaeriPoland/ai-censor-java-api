@@ -31,12 +31,17 @@ public class CensorPredictionInfo {
 
     private final UUID id;
     private final CensorPredictionGeneralInfo general;
+    private final CensorPredictionDetailsInfo details;
     private final CensorPredictionElapsedInfo elapsed;
 
     @JsonCreator
-    public CensorPredictionInfo(@JsonProperty("id") UUID id, @JsonProperty("general") CensorPredictionGeneralInfo general, @JsonProperty("elapsed") CensorPredictionElapsedInfo elapsed) {
+    public CensorPredictionInfo(@JsonProperty("id") UUID id,
+                                @JsonProperty("general") CensorPredictionGeneralInfo general,
+                                @JsonProperty("details") CensorPredictionDetailsInfo details,
+                                @JsonProperty("elapsed") CensorPredictionElapsedInfo elapsed) {
         this.id = id;
         this.general = general;
+        this.details = details;
         this.elapsed = elapsed;
     }
 
@@ -50,6 +55,11 @@ public class CensorPredictionInfo {
         return this.general;
     }
 
+    @JsonProperty("details")
+    public CensorPredictionDetailsInfo getDetails() {
+        return this.details;
+    }
+
     @JsonProperty("elapsed")
     public CensorPredictionElapsedInfo getElapsed() {
         return this.elapsed;
@@ -60,6 +70,7 @@ public class CensorPredictionInfo {
         return new StringJoiner(", ", CensorPredictionInfo.class.getSimpleName() + "[", "]")
                 .add("id=" + this.id)
                 .add("general=" + this.general)
+                .add("details=" + this.details)
                 .add("elapsed=" + this.elapsed)
                 .toString();
     }
