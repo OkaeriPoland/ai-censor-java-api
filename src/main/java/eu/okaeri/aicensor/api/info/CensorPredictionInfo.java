@@ -30,22 +30,14 @@ import java.util.*;
 public class CensorPredictionInfo {
 
     private final UUID id;
-    private final boolean swear;
-    private final String breakdown;
-    private final double elapsedAll;
-    private final double elapsedProcessing;
+    private final CensorPredictionGeneralInfo general;
+    private final CensorPredictionElapsedInfo elapsed;
 
     @JsonCreator
-    public CensorPredictionInfo(@JsonProperty("id") UUID id,
-                                @JsonProperty("swear") boolean swear,
-                                @JsonProperty("breakdown") String breakdown,
-                                @JsonProperty("elapsed_all") double elapsedAll,
-                                @JsonProperty("elapsed_processing") double elapsedProcessing) {
+    public CensorPredictionInfo(@JsonProperty("id") UUID id, @JsonProperty("general") CensorPredictionGeneralInfo general, @JsonProperty("elapsed") CensorPredictionElapsedInfo elapsed) {
         this.id = id;
-        this.swear = swear;
-        this.breakdown = breakdown;
-        this.elapsedAll = elapsedAll;
-        this.elapsedProcessing = elapsedProcessing;
+        this.general = general;
+        this.elapsed = elapsed;
     }
 
     @JsonProperty("id")
@@ -53,34 +45,22 @@ public class CensorPredictionInfo {
         return this.id;
     }
 
-    @JsonProperty("swear")
-    public boolean isSwear() {
-        return this.swear;
+    @JsonProperty("general")
+    public CensorPredictionGeneralInfo getGeneral() {
+        return this.general;
     }
 
-    @JsonProperty("breakdown")
-    public String getBreakdown() {
-        return this.breakdown;
-    }
-
-    @JsonProperty("elapsed_all")
-    public double getElapsedAll() {
-        return this.elapsedAll;
-    }
-
-    @JsonProperty("elapsed_processing")
-    public double getElapsedProcessing() {
-        return this.elapsedProcessing;
+    @JsonProperty("elapsed")
+    public CensorPredictionElapsedInfo getElapsed() {
+        return this.elapsed;
     }
 
     @Override
     public String toString() {
         return new StringJoiner(", ", CensorPredictionInfo.class.getSimpleName() + "[", "]")
                 .add("id=" + this.id)
-                .add("swear=" + this.swear)
-                .add("breakdown='" + this.breakdown + "'")
-                .add("elapsedAll=" + this.elapsedAll)
-                .add("elapsedProcessing=" + this.elapsedProcessing)
+                .add("general=" + this.general)
+                .add("elapsed=" + this.elapsed)
                 .toString();
     }
 
