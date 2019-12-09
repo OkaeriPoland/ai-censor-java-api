@@ -1,5 +1,5 @@
 /*
- * OK! AI.Censor Java API
+ * OK! AI.Censor Java Client
  * Copyright (C) 2019 Okaeri
  *
  * This program is free software: you can redistribute it and/or modify
@@ -16,39 +16,39 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-package eu.okaeri.aicensor.api.info;
+package eu.okaeri.aicensor.client.info;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.StringJoiner;
 
-public class CensorPredictionGeneralInfo {
+public class CensorPredictionElapsedInfo {
 
-    private final boolean swear;
-    private final String breakdown;
+    private final double all;
+    private final double processing;
 
     @JsonCreator
-    public CensorPredictionGeneralInfo(@JsonProperty("swear") boolean swear, @JsonProperty("breakdown") String breakdown) {
-        this.swear = swear;
-        this.breakdown = breakdown;
+    public CensorPredictionElapsedInfo(@JsonProperty("all") double all, @JsonProperty("processing") double processing) {
+        this.all = all;
+        this.processing = processing;
     }
 
-    @JsonProperty("swear")
-    public boolean isSwear() {
-        return this.swear;
+    @JsonProperty("all")
+    public double getAll() {
+        return this.all;
     }
 
-    @JsonProperty("breakdown")
-    public String getBreakdown() {
-        return this.breakdown;
+    @JsonProperty("processing")
+    public double getProcessing() {
+        return this.processing;
     }
 
     @Override
     public String toString() {
-        return new StringJoiner(", ", CensorPredictionGeneralInfo.class.getSimpleName() + "[", "]")
-                .add("swear=" + this.swear)
-                .add("breakdown='" + this.breakdown + "'")
+        return new StringJoiner(", ", CensorPredictionElapsedInfo.class.getSimpleName() + "[", "]")
+                .add("all=" + this.all)
+                .add("processing=" + this.processing)
                 .toString();
     }
 }

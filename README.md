@@ -1,4 +1,4 @@
-# OK! AI.Censor Java API
+# OK! AI.Censor Java Client
 Implementacja publicznego API OK! AI.Censor w Javie.
 
 ## Przykładowe użycie

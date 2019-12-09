@@ -4,10 +4,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>eu.okaeri</groupId>
-    <artifactId>ai-censor-api</artifactId>
+    <artifactId>ai-censor-client</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>AI.Censor API</name>
+    <name>AI.Censor Client</name>
 
     <dependencies>
         <dependency>
@@ -73,23 +73,23 @@
                     <relocations>
                         <relocation>
                             <pattern>okhttp3.</pattern>
-                            <shadedPattern>eu.okaeri.aicensor.api.okhttp3.</shadedPattern>
+                            <shadedPattern>eu.okaeri.aicensor.client.okhttp3.</shadedPattern>
                         </relocation>
                         <relocation>
                             <pattern>okio.</pattern>
-                            <shadedPattern>eu.okaeri.aicensor.api.okio.</shadedPattern>
+                            <shadedPattern>eu.okaeri.aicensor.client.okio.</shadedPattern>
                         </relocation>
                         <relocation>
                             <pattern>kotlin.</pattern>
-                            <shadedPattern>eu.okaeri.aicensor.api.kotlin.</shadedPattern>
+                            <shadedPattern>eu.okaeri.aicensor.client.kotlin.</shadedPattern>
                         </relocation>
                         <relocation>
                             <pattern>com.fasterxml.jackson.core.</pattern>
-                            <shadedPattern>eu.okaeri.aicensor.api.com.fasterxml.jackson.core.</shadedPattern>
+                            <shadedPattern>eu.okaeri.aicensor.client.com.fasterxml.jackson.core.</shadedPattern>
                         </relocation>
                         <relocation>
                             <pattern>com.fasterxml.jackson.databind.</pattern>
-                            <shadedPattern>eu.okaeri.aicensor.api.com.fasterxml.jackson.databind.</shadedPattern>
+                            <shadedPattern>eu.okaeri.aicensor.client.com.fasterxml.jackson.databind.</shadedPattern>
                         </relocation>
                     </relocations>
                 </configuration>

@@ -1,5 +1,5 @@
 /*
- * OK! AI.Censor Java API
+ * OK! AI.Censor Java Client
  * Copyright (C) 2019 Okaeri
  *
  * This program is free software: you can redistribute it and/or modify
@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-package eu.okaeri.aicensor.api.info;
+package eu.okaeri.aicensor.client.info;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
