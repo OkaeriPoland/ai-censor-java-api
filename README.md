@@ -20,4 +20,7 @@ System.out.println(prediction);
 boolean swear = prediction.getGeneral().isSwear();
 ```
 
-- [CensorPredictionInfo](https://github.com/OkaeriPoland/ai-censor-java-api/blob/master/src/main/java/eu/okaeri/aicensor/api/info/CensorPredictionInfo.java)
+- [CensorPredictionInfo](https://github.com/OkaeriPoland/ai-censor-java-client/blob/master/src/main/java/eu/okaeri/aicensor/client/info/CensorPredictionInfo.java)
+- [CensorPredictionGeneralInfo](https://github.com/OkaeriPoland/ai-censor-java-client/blob/master/src/main/java/eu/okaeri/aicensor/client/info/CensorPredictionGeneralInfo.java)
+- [CensorPredictionDetailsInfo](https://github.com/OkaeriPoland/ai-censor-java-client/blob/master/src/main/java/eu/okaeri/aicensor/client/info/CensorPredictionDetailsInfo.java)
+- [CensorPredictionElapsedInfo](https://github.com/OkaeriPoland/ai-censor-java-client/blob/master/src/main/java/eu/okaeri/aicensor/client/info/CensorPredictionElapsedInfo.java)
