@@ -26,33 +26,33 @@ boolean swear = prediction.getGeneral().isSwear();
 
 | Własność  | Opis |
 | ------------- | ------------- |
-| UUID id #getId() | Zwraca unikalne id zapytania zapisanego w systemie AI.Censor |
-| CensorPredictionGeneralInfo general #getGeneral() | Sekcja ogólna odpowiedzi |
-| CensorPredictionDetailsInfo details #getDetails() | Sekcja szczegółów odpowiedzi |
-| CensorPredictionElapsedInfo elapsed #getElapsed() | Sekcja informacji dotyczących czasu przetwarzania |
+| UUID #getId() | Zwraca unikalne id zapytania zapisanego w systemie AI.Censor |
+| CensorPredictionGeneralInfo #getGeneral() | Sekcja ogólna odpowiedzi |
+| CensorPredictionDetailsInfo #getDetails() | Sekcja szczegółów odpowiedzi |
+| CensorPredictionElapsedInfo #getElapsed() | Sekcja informacji dotyczących czasu przetwarzania |
 
 
 #### CensorPredictionGeneralInfo [[link]](https://github.com/OkaeriPoland/ai-censor-java-client/blob/master/src/main/java/eu/okaeri/aicensor/client/info/CensorPredictionGeneralInfo.java)
 
 | Własność  | Opis |
 | ------------- | ------------- |
-| boolean swear #isSwear() | Informacja o tym, czy wiadomość została uznana za wulgarną |
-| String breakdown #getBreakdown() | Przetworzona wiadomość ułatwiająca ewentualne debugowanie błędnych wykryć, przydatna do wyświetlania dla administracji w logach |
+| boolean #isSwear() | Informacja o tym, czy wiadomość została uznana za wulgarną |
+| String #getBreakdown() | Przetworzona wiadomość ułatwiająca ewentualne debugowanie błędnych wykryć, przydatna do wyświetlania dla administracji w logach |
 
 
 #### CensorPredictionDetailsInfo [[link]](https://github.com/OkaeriPoland/ai-censor-java-client/blob/master/src/main/java/eu/okaeri/aicensor/client/info/CensorPredictionDetailsInfo.java)
 
 | Własność  | Opis |
 | ------------- | ------------- |
-| boolean basicContainsHit #isBasicContainsHit() | Informacja o tym, czy wiadomość zawierała zakazane frazy |
-| boolean exactMatchHit #isExactMatchHit() | Informacja o tym, czy wiadomość była zablokowaną frazą (np. wyrażenie jd) |
-| String aiLabel #getAiLabel() | Ocena ai (`ok` lub `swear`) |
-| double aiProbability #getAiProbability() | Wartość od `0` do `1` określająca prawdopodobieństwo dotyczące prawdziwości `aiLabel` |
+| boolean #isBasicContainsHit() | Informacja o tym, czy wiadomość zawierała zakazane frazy |
+| boolean #isExactMatchHit() | Informacja o tym, czy wiadomość była zablokowaną frazą (np. wyrażenie jd) |
+| String #getAiLabel() | Ocena ai (`ok` lub `swear`) |
+| double #getAiProbability() | Wartość od `0` do `1` określająca prawdopodobieństwo dotyczące prawdziwości `aiLabel` |
 
 
 #### CensorPredictionElapsedInfo [[link]](https://github.com/OkaeriPoland/ai-censor-java-client/blob/master/src/main/java/eu/okaeri/aicensor/client/info/CensorPredictionElapsedInfo.java)
 
 | Własność  | Opis |
 | ------------- | ------------- |
-| double all #getAll() | Całkowity czas w milisekundach przez który zapytanie było obsługiwane wewnętrznie |
-| double processing #getProcessing() | Czas przez jaki zostały wykonane oceny wulgarności |
+| double #getAll() | Całkowity czas w milisekundach przez który zapytanie było obsługiwane wewnętrznie |
+| double #getProcessing() | Czas przez jaki zostały wykonane oceny wulgarności |
