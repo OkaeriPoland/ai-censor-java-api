@@ -14,7 +14,14 @@ CensorApiContext apiContext = new CensorApiContext(token);
 ```java
 // zapytanie
 String phrase = "o cie k u r//w@!";
-CensorPredictionInfo prediction = CensorPredictionInfo.get(apiContext, phrase);
+CensorPredictionInfo prediction;
+try {
+    prediction = CensorPredictionInfo.get(apiContext, phrase);
+} catch (ApiException exception) {
+    // TODO: obsluga bledu, np. sprawdzanie lokalna lista lub odrzucenie dodawania wiadomosci z bledem do uzytkownika
+    exception.printStackTrace();
+    return;
+}
 System.out.println(prediction);
 // czy jest to wulgarne?
 boolean swear = prediction.getGeneral().isSwear();
