@@ -91,6 +91,10 @@
                             <pattern>com.fasterxml.jackson.databind.</pattern>
                             <shadedPattern>eu.okaeri.aicensor.client.com.fasterxml.jackson.databind.</shadedPattern>
                         </relocation>
+                        <relocation>
+                            <pattern>com.fasterxml.jackson.annotation.</pattern>
+                            <shadedPattern>eu.okaeri.aicensor.client.com.fasterxml.jackson.annotation.</shadedPattern>
+                        </relocation>
                     </relocations>
                 </configuration>
             </plugin>
