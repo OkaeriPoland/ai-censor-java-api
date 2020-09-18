@@ -21,6 +21,7 @@ package eu.okaeri.aicensor.client.info;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.List;
 import java.util.StringJoiner;
 
 public class CensorPredictionDetailsInfo {
@@ -29,16 +30,19 @@ public class CensorPredictionDetailsInfo {
     private final boolean exactMatchHit;
     private final String aiLabel;
     private final double aiProbability;
+    private final List<String> domainsList;
 
     @JsonCreator
     public CensorPredictionDetailsInfo(@JsonProperty("basic_contains_hit") boolean basicContainsHit,
                                        @JsonProperty("exact_match_hit") boolean exactMatchHit,
                                        @JsonProperty("ai_label") String aiLabel,
-                                       @JsonProperty("ai_probability") double aiProbability) {
+                                       @JsonProperty("ai_probability") double aiProbability,
+                                       @JsonProperty("domains_list") List<String> domainsList) {
         this.basicContainsHit = basicContainsHit;
         this.exactMatchHit = exactMatchHit;
         this.aiLabel = aiLabel;
         this.aiProbability = aiProbability;
+        this.domainsList = domainsList;
     }
 
     @JsonProperty("basic_contains_hit")
@@ -61,6 +65,11 @@ public class CensorPredictionDetailsInfo {
         return this.aiProbability;
     }
 
+    @JsonProperty("domains_list")
+    public List<String> getDomainsList() {
+        return this.domainsList;
+    }
+
     @Override
     public String toString() {
         return new StringJoiner(", ", CensorPredictionDetailsInfo.class.getSimpleName() + "[", "]")
@@ -68,6 +77,7 @@ public class CensorPredictionDetailsInfo {
                 .add("exactMatchHit=" + this.exactMatchHit)
                 .add("aiLabel='" + this.aiLabel + "'")
                 .add("aiProbability=" + this.aiProbability)
+                .add("domainsList=" + this.domainsList)
                 .toString();
     }
 }

@@ -27,11 +27,15 @@ public class CensorPredictionGeneralInfo {
 
     private final boolean swear;
     private final String breakdown;
+    private final boolean domains;
 
     @JsonCreator
-    public CensorPredictionGeneralInfo(@JsonProperty("swear") boolean swear, @JsonProperty("breakdown") String breakdown) {
+    public CensorPredictionGeneralInfo(@JsonProperty("swear") boolean swear,
+                                       @JsonProperty("breakdown") String breakdown,
+                                       @JsonProperty("domains") boolean domains) {
         this.swear = swear;
         this.breakdown = breakdown;
+        this.domains = domains;
     }
 
     @JsonProperty("swear")
@@ -44,11 +48,17 @@ public class CensorPredictionGeneralInfo {
         return this.breakdown;
     }
 
+    @JsonProperty("domains")
+    public boolean hasDomains() {
+        return this.domains;
+    }
+
     @Override
     public String toString() {
         return new StringJoiner(", ", CensorPredictionGeneralInfo.class.getSimpleName() + "[", "]")
                 .add("swear=" + this.swear)
                 .add("breakdown='" + this.breakdown + "'")
+                .add("domains=" + this.domains)
                 .toString();
     }
 }

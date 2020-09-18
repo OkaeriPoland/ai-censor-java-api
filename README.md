@@ -45,6 +45,7 @@ boolean swear = prediction.getGeneral().isSwear();
 | ------------- | ------------- |
 | boolean #isSwear() | Informacja o tym, czy wiadomość została uznana za wulgarną |
 | String #getBreakdown() | Przetworzona wiadomość ułatwiająca ewentualne debugowanie błędnych wykryć, przydatna do wyświetlania dla administracji w logach |
+| boolean #hasDomains() | Informacja o tym, czy wiadomość zawiera nazwy domenowe istniejące w systemie DNS |
 
 
 #### CensorPredictionDetailsInfo [[link]](https://github.com/OkaeriPoland/ai-censor-java-client/blob/master/src/main/java/eu/okaeri/aicensor/client/info/CensorPredictionDetailsInfo.java)
@@ -55,6 +56,7 @@ boolean swear = prediction.getGeneral().isSwear();
 | boolean #isExactMatchHit() | Informacja o tym, czy wiadomość była zablokowaną frazą (np. wyrażenie jd) |
 | String #getAiLabel() | Ocena ai (`ok` lub `swear`) |
 | double #getAiProbability() | Wartość od `0` do `1` określająca prawdopodobieństwo dotyczące prawdziwości `aiLabel` |
+| List<String> #getDomainsList() | Lista domen obecnych w wiadomości |
 
 
 #### CensorPredictionElapsedInfo [[link]](https://github.com/OkaeriPoland/ai-censor-java-client/blob/master/src/main/java/eu/okaeri/aicensor/client/info/CensorPredictionElapsedInfo.java)
